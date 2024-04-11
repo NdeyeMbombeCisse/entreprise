@@ -100,6 +100,24 @@ class tache{
             die("Erreur: impossible d'afficher les éléments" .$e->getMessage());
         }
     }
+    // methode pour la suppression
+    public function delete($id){
+        // requet pour la suppression
+        $sql="DELETE FROM tache WHERE id= :id";
+        // preparation de la re quet
+        $stmt=$this->connexion->prepare($sql);
+        // liaison de la variable id avec la valeur id
+        $stmt->bindparam(':id', $id, PDO::PARAM_INT);
+        // execution de la reqquet
+        $resultat=$stmt->execute();
+        if($resultat){
+            // direction vera la page ajouter des taches
+            header("location: read.php");
+        }else{
+            die("Erreur: impossible d'inserer des données.");
+        }
+
+    }
     
 }
 ?>

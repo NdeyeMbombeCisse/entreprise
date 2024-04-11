@@ -75,7 +75,7 @@ class tache{
             $resultat = $stmt->execute();
             if($resultat){
                 // direction vera la page ajouter des taches
-                header("location: create.php");
+                header("location: read.php");
             }else{
                 die("Erreur: impossible d'inserer des données.");
             }
@@ -83,5 +83,23 @@ class tache{
             die("Erreur : impossible d'inserer des données " .$e->getMessage());
         }
     }
+
+    // methode pour la lecture des taches ajoutees
+    public function read(){
+        try{
+            // la requete
+            $sql="SELECT * FROM tache";
+            // preparation de la requete
+            $stmt=$this->connexion->prepare($sql);
+            // execution de la requete
+            $resultat=$stmt->execute();
+            // recuperation des elements sous forme de tableau
+            $resultat=$stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $resultat;
+        } catch(PDOException $e) {
+            die("Erreur: impossible d'afficher les éléments" .$e->getMessage());
+        }
+    }
+    
 }
 ?>

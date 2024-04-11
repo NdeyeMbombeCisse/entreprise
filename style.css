@@ -6,21 +6,20 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Pour centrer verticalement */
     background-color: #f2f2f2; /* Ajout d'une couleur de fond */
 }
 
 header {
-    background-color: #333;
+    background-color: hsl(0, 61%, 72%);
     color: #fff;
     padding: 10px 0; /* Supprime la marge verticale, conserve la marge horizontale */
-    text-align: center;
+    text-align: center; 
     width: 100%; /* Occupe toute la largeur */
 }
 
-nav {
+ nav {
     margin-bottom: 20px;
-}
+} 
 
 nav a {
     color: #fff;
@@ -57,6 +56,7 @@ fieldset {
 }
 
 .remplir input[type="text"],
+.remplir input[type="date"],
 .remplir select {
     width: 100%;
     padding: 8px;
@@ -77,4 +77,35 @@ fieldset {
 
 #bouton:hover {
     background-color: #45a049;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style de l'en-tête du tableau */
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Style des lignes du tableau */
+.trow:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Style des cellules du tableau */
+td {
+    padding: 10px;
+}
+
+/* Style des liens pour éditer et supprimer les données */
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
 }

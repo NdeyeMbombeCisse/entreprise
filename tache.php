@@ -116,7 +116,32 @@ class tache{
         }else{
             die("Erreur: impossible d'inserer des données.");
         }
-
+    }
+    // methode pour modifier
+    public function update($id, $libele, $description, $date_echeance, $priorite, $etat) {
+        try {
+            // requete sql pour modifier
+            $sql = "UPDATE tache SET libele = :libele, description = :description, date_echeance = :date_echeance, priorite = :priorite, etat = :etat WHERE id = :id";
+            // preparation de la requete
+            $stmt = $this->connexion->prepare($sql);
+            // faire la liaison des valeurs aux parametres
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindParam(':libele', $libele, PDO::PARAM_STR);
+            $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+            $stmt->bindParam(':date_echeance', $date_echeance, PDO::PARAM_STR);
+            $stmt->bindParam(':priorite', $priorite, PDO::PARAM_STR);
+            $stmt->bindParam(':etat', $etat, PDO::PARAM_STR);
+            // execution de la requete
+            $resultat = $stmt->execute();
+            if($resultat){
+                // redirection dans la liste des taches
+                header("location: read.php");
+            } else {
+                die("Erreur: impossible de modifier les éléments");
+            }
+        } catch(PDOException $e){
+            die("Erreur: impossible de modifier les éléments" . $e->getMessage());
+        }
     }
     
 }

@@ -43,32 +43,32 @@ if(isset($_POST['ajouter'])){
     <fieldset>
         <div class="remplir">
             <label for="libele">quel est le libele de la tache?</label>
-            <input type="text" name="libele">
+            <input type="text" name="libele" >
 
         </div>
 
         <div class="remplir">
             <label for="description">quelle est la description  de la tache?</label>
-            <input type="text" name="description">
+            <input type="text" name="description" >
 
         </div>
         <div class="remplir">
             <label for="date_echeance">quel est la date d'echeance de la tache?</label>
-            <input type="date" name="date_echeance">
+            <input type="date" name="date_echeance" >
 
         </div>
         <div class="remplir">
             <label for="priorite">donner la priorite de la tache</label>
             <select name="priorite" id="priorite">
-                <option value="faibe">faible</option>
-                <option value="moyen">moyenne</option>
-                <option value="eleve">elevee</option>
+                <option value="faibe">faibe</option>
+                <option value="moyen">moyen</option>
+                <option value="eleve">eleve</option>
             </select>
         </div>
         <div class="remplir">
             <label for="etat">donner la etat de la tache</label>
             <select name="etat" id="etat">
-                <option value="a faire">faible</option>
+                <option value="a faire"> faire</option>
                 <option value="en cours">en cours</option>
                 <option value="terminee">terminee</option>
             </select>

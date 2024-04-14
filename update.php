@@ -57,10 +57,12 @@ if(isset($id)){
 <header>
     <nav>
         <a href="create.php">ADD TACHES</a>
-        <a href="read.php">LISTE_TACHES</a> 
+        <a href="read.php">LISTE_TACHES</a>
+        <a href="add_user.php">ADD USER</a> 
+        <a href="read_user.php">LISTE USER</a> 
     </nav>
 </header> 
-<h1>AJOUTER UNE TACHE</h1>
+<h1>MODIFIER UNE TACHE</h1>
 <form action="" method="post">
     <fieldset>
         <div class="remplir">

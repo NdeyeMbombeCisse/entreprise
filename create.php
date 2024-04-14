@@ -1,4 +1,15 @@
 <?php
+session_start(); // Démarre la session pour vérifier l'authentification
+
+// Vérification de la session d'authentification de l'utilisateur
+if (!isset($_SESSION['user_id'])) {
+    // Redirection vers la page de connexion si l'utilisateur n'est pas authentifié
+    header("Location: auth.php");
+    exit(); // Arrêt du script
+}
+?>
+
+<?php
 // inclusion du fichier config
 include"config.php";
 // verification de la soumission du formulaire
@@ -35,7 +46,9 @@ if(isset($_POST['ajouter'])){
 <header>
     <nav>
         <a href="create.php">ADD TACHES</a>
-        <a href="read.php">LISTE_TACHES</a> 
+        <a href="read.php">LISTE_TACHES</a>
+        <a href="add_user.php">ADD USER</a> 
+        <a href="read_user.php">LISTE USER</a> 
     </nav>
 </header> 
 <h1>AJOUTER UNE TACHE</h1>
